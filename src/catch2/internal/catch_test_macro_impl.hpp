@@ -93,8 +93,9 @@
                 CATCH_INTERNAL_SUPPRESS_UNUSED_RESULT \
                 CATCH_INTERNAL_SUPPRESS_USELESS_CAST_WARNINGS \
                 static_cast<void>(__VA_ARGS__); \
-                CATCH_INTERNAL_STOP_WARNINGS_SUPPRESSION \
+                CATCH_INTERNAL_SUPPRESS_UNREACHABLE_CODE_WARNINGS \
                 catchAssertionHandler.handleUnexpectedExceptionNotThrown(); \
+                CATCH_INTERNAL_STOP_WARNINGS_SUPPRESSION \
             } \
             catch( ... ) { \
                 catchAssertionHandler.handleExceptionThrownAsExpected(); \
@@ -114,8 +115,9 @@
                 CATCH_INTERNAL_SUPPRESS_UNUSED_RESULT \
                 CATCH_INTERNAL_SUPPRESS_USELESS_CAST_WARNINGS \
                 static_cast<void>(expr); \
-                CATCH_INTERNAL_STOP_WARNINGS_SUPPRESSION \
+                CATCH_INTERNAL_SUPPRESS_UNREACHABLE_CODE_WARNINGS \
                 catchAssertionHandler.handleUnexpectedExceptionNotThrown(); \
+                CATCH_INTERNAL_STOP_WARNINGS_SUPPRESSION \
             } \
             catch( exceptionType const& ) { \
                 catchAssertionHandler.handleExceptionThrownAsExpected(); \
@@ -141,8 +143,9 @@
                 CATCH_INTERNAL_SUPPRESS_UNUSED_RESULT \
                 CATCH_INTERNAL_SUPPRESS_USELESS_CAST_WARNINGS \
                 static_cast<void>(__VA_ARGS__); \
-                CATCH_INTERNAL_STOP_WARNINGS_SUPPRESSION \
+                CATCH_INTERNAL_SUPPRESS_UNREACHABLE_CODE_WARNINGS \
                 catchAssertionHandler.handleUnexpectedExceptionNotThrown(); \
+                CATCH_INTERNAL_STOP_WARNINGS_SUPPRESSION \
             } \
             catch( ... ) { \
                 Catch::handleExceptionMatchExpr( catchAssertionHandler, matcher ); \

@@ -210,6 +210,8 @@
             __pragma( warning( push ) )
 #        define CATCH_INTERNAL_STOP_WARNINGS_SUPPRESSION \
             __pragma( warning( pop ) )
+#        define CATCH_INTERNAL_SUPPRESS_UNREACHABLE_CODE_WARNINGS \
+            __pragma( warning( disable:4996 ) )
 #    endif
 
 // Universal Windows platform does not support SEH
@@ -396,6 +398,9 @@
 #endif
 #if !defined( CATCH_INTERNAL_SUPPRESS_SHADOW_WARNINGS )
 #    define CATCH_INTERNAL_SUPPRESS_SHADOW_WARNINGS
+#endif
+#if !defined( CATCH_INTERNAL_SUPPRESS_UNREACHABLE_CODE_WARNINGS )
+#    define CATCH_INTERNAL_SUPPRESS_UNREACHABLE_CODE_WARNINGS
 #endif
 
 
